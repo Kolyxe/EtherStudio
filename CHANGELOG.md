@@ -1,5 +1,11 @@
 # @etherstudio/etherstudio
 
+## 0.0.5
+
+### Patch Changes
+
+- c297acb: Update Nom Ju
+
 ## 0.0.4
 
 ### Patch Changes
