@@ -1,5 +1,11 @@
 # @etherstudio/etherstudio
 
+## 0.0.3
+
+### Patch Changes
+
+- 7c206af: Remove Console log
+
 ## 0.0.2
 
 ### Patch Changes
