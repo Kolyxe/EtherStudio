@@ -1,5 +1,11 @@
 # @etherstudio/etherstudio
 
+## 0.0.6
+
+### Patch Changes
+
+- ad2f248: Changer nom Emma
+
 ## 0.0.5
 
 ### Patch Changes
