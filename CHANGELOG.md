@@ -1,5 +1,11 @@
 # @etherstudio/etherstudio
 
+## 1.0.2
+
+### Patch Changes
+
+- 11f1e99: remove test
+
 ## 1.0.1
 
 ### Patch Changes
