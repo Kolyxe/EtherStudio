@@ -1,5 +1,11 @@
 # @etherstudio/etherstudio
 
+## 1.0.1
+
+### Patch Changes
+
+- db0571f: release animation 2.0
+
 ## 1.0.0
 
 ### Major Changes
