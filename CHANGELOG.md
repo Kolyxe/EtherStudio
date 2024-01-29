@@ -1,5 +1,18 @@
 # @etherstudio/etherstudio
 
+## 1.0.0
+
+### Major Changes
+
+- 7dd3bd8: release with animation
+
+### Patch Changes
+
+- 043e942: release animation
+- 9582365: animation
+- ae3b8f8: release animation
+- 2266319: release animation
+
 ## 0.0.6
 
 ### Patch Changes
