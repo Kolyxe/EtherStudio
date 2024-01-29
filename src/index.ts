@@ -127,5 +127,4 @@ window.Webflow.push(() => {
 
   // Attach event listener for closing the modal
   document.querySelector('.multi-form22_close-button').addEventListener('click', closeModal);
-  console.log('it merged');
 });
