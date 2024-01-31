@@ -1,5 +1,11 @@
 # @etherstudio/etherstudio
 
+## 1.0.7
+
+### Patch Changes
+
+- 5b23893: updated depencies
+
 ## 1.0.6
 
 ### Patch Changes
