@@ -1,5 +1,12 @@
 # @etherstudio/etherstudio
 
+## 1.0.10
+
+### Patch Changes
+
+- d98ffd3: same thing lmao
+- b482958: same thing lmao
+
 ## 1.0.9
 
 ### Patch Changes
