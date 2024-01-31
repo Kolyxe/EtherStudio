@@ -1,5 +1,11 @@
 # @etherstudio/etherstudio
 
+## 1.0.5
+
+### Patch Changes
+
+- 83b48dc: cursor animation only dekstop
+
 ## 1.0.4
 
 ### Patch Changes
