@@ -12,8 +12,8 @@ dependencies:
     specifier: ^10.18.0
     version: 10.18.0
   gsap:
-    specifier: file:gsap-bonus.tgz
-    version: file:gsap-bonus.tgz
+    specifier: npm:@gsap/shockingly@^3.12.5
+    version: /@gsap/shockingly@3.12.5
   sass:
     specifier: ^1.69.7
     version: 1.70.0
@@ -579,6 +579,10 @@ packages:
     dependencies:
       typescript: 5.2.2
     dev: true
+
+  /@gsap/shockingly@3.12.5:
+    resolution: {integrity: sha512-JoZp6iYvOC+wkwl8zfXSqSrYCcuzTntaULCL08YMa1vonrYcr9D0K3EUe9PNpw7FYK1chjSwjjgcw3zS/O2SWg==}
+    dev: false
 
   /@humanwhocodes/config-array@0.11.13:
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
@@ -3324,9 +3328,3 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
-
-  file:gsap-bonus.tgz:
-    resolution: {integrity: sha512-lng+n858yG1KjpRjXDBBo51mXHzvSwWPHMp2bFRX/uX5MRDPXaIXcnzPYWzAzF+aM3D+Z2bTXRK27OYGcJelGQ==, tarball: file:gsap-bonus.tgz}
-    name: gsap
-    version: 3.12.4
-    dev: false
