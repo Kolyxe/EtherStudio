@@ -1,5 +1,12 @@
 # @etherstudio/etherstudio
 
+## 1.0.9
+
+### Patch Changes
+
+- 8d929e1: install properly
+- a9cecb9: im retarded and i need to install it properly
+
 ## 1.0.8
 
 ### Patch Changes
