@@ -37,13 +37,16 @@ window.Webflow.push(() => {
   // Select the element with the class 'svg-header'
   const svgHeader = document.querySelector('.svg-header');
 
-  // Create a GSAP animation for infinite rotation
-  gsap.to(svgHeader, {
-    rotation: 360, // Rotate by 360 degrees
-    duration: 10, // Duration of one full rotation (in seconds)
-    ease: 'none', // Linear rotation (constant speed)
-    repeat: -1, // Infinite repetition
-  });
+  // Check if window width is greater than 991 pixels
+  if (window.innerWidth > 991) {
+    // Create a GSAP animation for infinite rotation
+    gsap.to(svgHeader, {
+      rotation: 360, // Rotate by 360 degrees
+      duration: 10, // Duration of one full rotation (in seconds)
+      ease: 'none', // Linear rotation (constant speed)
+      repeat: -1, // Infinite repetition
+    });
+  }
 
   // Initialize ScrollSmoother and return the instance
   function smoothScroll() {
