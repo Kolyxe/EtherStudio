@@ -1,5 +1,11 @@
 # @etherstudio/etherstudio
 
+## 1.0.3
+
+### Patch Changes
+
+- 73a82eb: change lagging svg only work on desktop
+
 ## 1.0.2
 
 ### Patch Changes
