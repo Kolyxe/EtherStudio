@@ -47,6 +47,8 @@ window.Webflow.push(() => {
         ease: 'none', // Linear rotation (constant speed)
         repeat: -1, // Infinite repetition
       });
+    } else {
+      console.log('trop petit');
     }
   }
 
@@ -88,35 +90,34 @@ window.Webflow.push(() => {
   });
 
   function updateCursor() {
-    // Check if the multi-form22_component modal is present and visible
-    const modal = document.querySelector('.multi-form22_component');
-    if (modal && modal.style.display !== 'none') {
-      return; // Exit the function if the modal is open and visible
-    }
+    // Check if the window width is greater than 991 pixels
+    if (window.innerWidth > 991) {
+      // Existing logic for larger screens
+      const hoverItemRect = hoverItem.getBoundingClientRect();
+      const dist = distanceToPoint(mouseX, mouseY, hoverItemRect);
+      const scale = calculateScale(dist, maxDistance, maxScale);
 
-    // Existing cursor update logic
-    const hoverItemRect = hoverItem.getBoundingClientRect();
-    const dist = distanceToPoint(mouseX, mouseY, hoverItemRect);
-    const scale = calculateScale(dist, maxDistance, maxScale);
+      const cursorX = mouseX + window.scrollX;
+      const cursorY = mouseY + window.scrollY;
 
-    // Calculate cursor position based on scroll position
-    const cursorX = mouseX + window.scrollX;
-    const cursorY = mouseY + window.scrollY;
+      if (scale > 1) {
+        document.body.style.cursor = 'none';
+      } else {
+        document.body.style.cursor = 'auto';
+      }
 
-    // Hide the default cursor when the custom cursor is active
-    if (scale > 1) {
-      document.body.style.cursor = 'none';
+      cursor.style.opacity = scale > 1 ? 1 : 0;
+      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) scale(${scale})`;
     } else {
+      // Reset custom cursor styles for smaller screens
       document.body.style.cursor = 'auto';
+      cursor.style.opacity = 0;
+      cursor.style.transform = 'none';
     }
 
-    cursor.style.opacity = scale > 1 ? 1 : 0;
-    cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) scale(${scale})`;
-
-    if (!isMouseMoving) {
-      return;
+    if (isMouseMoving) {
+      requestAnimationFrame(updateCursor);
     }
-    requestAnimationFrame(updateCursor);
   }
 
   function distanceToPoint(x, y, rect) {
