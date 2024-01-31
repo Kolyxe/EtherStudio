@@ -1,5 +1,11 @@
 # @etherstudio/etherstudio
 
+## 1.0.6
+
+### Patch Changes
+
+- 00d4eb4: adjusted smoothscroll to new html structure for optimal perfomance
+
 ## 1.0.5
 
 ### Patch Changes
