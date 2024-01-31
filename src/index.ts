@@ -37,16 +37,24 @@ window.Webflow.push(() => {
   // Select the element with the class 'svg-header'
   const svgHeader = document.querySelector('.svg-header');
 
-  // Check if window width is greater than 991 pixels
-  if (window.innerWidth > 991) {
-    // Create a GSAP animation for infinite rotation
-    gsap.to(svgHeader, {
-      rotation: 360, // Rotate by 360 degrees
-      duration: 10, // Duration of one full rotation (in seconds)
-      ease: 'none', // Linear rotation (constant speed)
-      repeat: -1, // Infinite repetition
-    });
+  // Function to run GSAP animation based on window size
+  function runGsapAnimation() {
+    if (window.innerWidth > 991) {
+      // Create a GSAP animation for infinite rotation
+      gsap.to(svgHeader, {
+        rotation: 360, // Rotate by 360 degrees
+        duration: 10, // Duration of one full rotation (in seconds)
+        ease: 'none', // Linear rotation (constant speed)
+        repeat: -1, // Infinite repetition
+      });
+    }
   }
+
+  // Run the function on initial load
+  runGsapAnimation();
+
+  // Attach the function to the window resize event
+  window.addEventListener('resize', runGsapAnimation);
 
   // Initialize ScrollSmoother and return the instance
   function smoothScroll() {
