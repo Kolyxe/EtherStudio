@@ -63,7 +63,7 @@ window.Webflow.push(() => {
     //eslint-disable-next-line
     let smoother = ScrollSmoother.create({
       wrapper: '.smooth-wrapper',
-      content: '.page-wrapper',
+      content: '.smooth-content',
       smooth: 1,
       effects: true,
     });
