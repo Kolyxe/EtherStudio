@@ -1,5 +1,11 @@
 # @etherstudio/etherstudio
 
+## 1.0.11
+
+### Patch Changes
+
+- 45f8d22: finally updated gsap 3.12
+
 ## 1.0.10
 
 ### Patch Changes
