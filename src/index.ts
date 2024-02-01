@@ -3,8 +3,8 @@ import { greetUser } from '$utils/greet';
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+//import { ScrollSmoother } from 'gsap/ScrollSmoother';
+gsap.registerPlugin(ScrollTrigger); //, ScrollSmoother
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -58,6 +58,7 @@ window.Webflow.push(() => {
   // Attach the function to the window resize event
   window.addEventListener('resize', runGsapAnimation);
 
+  /*
   // Initialize ScrollSmoother and return the instance
   function smoothScroll() {
     //eslint-disable-next-line
@@ -69,6 +70,7 @@ window.Webflow.push(() => {
     });
   }
   smoothScroll();
+*/
 
   const cursor = document.querySelector('.cursor');
   const hoverItem = document.querySelector('#hover-item');
