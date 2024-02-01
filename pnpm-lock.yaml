@@ -12,7 +12,7 @@ dependencies:
     specifier: ^10.18.0
     version: 10.18.0
   gsap:
-    specifier: npm:@gsap/shockingly@^3.12.5
+    specifier: ^3.12.5
     version: /@gsap/shockingly@3.12.5
   sass:
     specifier: ^1.69.7
@@ -584,7 +584,7 @@ packages:
     dev: true
 
   /@gsap/shockingly@3.12.5:
-    resolution: {integrity: sha512-JoZp6iYvOC+wkwl8zfXSqSrYCcuzTntaULCL08YMa1vonrYcr9D0K3EUe9PNpw7FYK1chjSwjjgcw3zS/O2SWg==}
+    resolution: {integrity: sha512-JoZp6iYvOC+wkwl8zfXSqSrYCcuzTntaULCL08YMa1vonrYcr9D0K3EUe9PNpw7FYK1chjSwjjgcw3zS/O2SWg==, tarball: https://npm.greensock.com/@gsap/shockingly/-/shockingly-3.12.5.tgz}
     dev: false
 
   /@humanwhocodes/config-array@0.11.13:
