@@ -45,18 +45,6 @@ window.Webflow.push(() => {
     repeat: -1, // Infinite repetition
   });
 
-  // Initialize ScrollSmoother and return the instance
-  function smoothScroll() {
-    //eslint-disable-next-line
-    let smoother = ScrollSmoother.create({
-      wrapper: '.smooth-wrapper',
-      content: '.page-wrapper',
-      smooth: 1,
-      effects: true,
-    });
-  }
-  smoothScroll();
-
   const cursor = document.querySelector('.cursor');
   const hoverItem = document.querySelector('#hover-item');
   let isMouseMoving = false; // Flag to track mouse movement
@@ -127,5 +115,4 @@ window.Webflow.push(() => {
 
   // Attach event listener for closing the modal
   document.querySelector('.multi-form22_close-button').addEventListener('click', closeModal);
-  console.log('it merged');
 });
