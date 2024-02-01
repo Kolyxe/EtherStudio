@@ -56,7 +56,7 @@
   "dependencies": {
     "@finsweet/ts-utils": "^0.40.0",
     "framer-motion": "^10.18.0",
-    "gsap": "^3.12.5",
+    "gsap": "npm:@gsap/shockingly@^3.12.4",
     "sass": "^1.69.7"
   },
   "engines": {
