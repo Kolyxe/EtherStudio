@@ -1,6 +1,6 @@
 {
   "name": "@etherstudio/etherstudio",
-  "version": "0.0.6",
+  "version": "1.0.11",
   "description": "Developer starter template for Finsweet projects.",
   "homepage": "https://github.com/finsweet/developer-starter#readme",
   "license": "ISC",
@@ -55,7 +55,7 @@
   "dependencies": {
     "@finsweet/ts-utils": "^0.40.0",
     "framer-motion": "^10.18.0",
-    "gsap": "file:gsap-bonus.tgz",
+    "gsap": "^3.12.5",
     "sass": "^1.69.7"
   },
   "engines": {

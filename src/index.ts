@@ -3,8 +3,8 @@ import { greetUser } from '$utils/greet';
 import { gsap } from 'gsap';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+//import { ScrollSmoother } from 'gsap/ScrollSmoother';
+gsap.registerPlugin(ScrollTrigger); //, ScrollSmoother
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -37,25 +37,40 @@ window.Webflow.push(() => {
   // Select the element with the class 'svg-header'
   const svgHeader = document.querySelector('.svg-header');
 
-  // Create a GSAP animation for infinite rotation
-  gsap.to(svgHeader, {
-    rotation: 360, // Rotate by 360 degrees
-    duration: 10, // Duration of one full rotation (in seconds)
-    ease: 'none', // Linear rotation (constant speed)
-    repeat: -1, // Infinite repetition
-  });
+  // Function to run GSAP animation based on window size
+  function runGsapAnimation() {
+    if (window.innerWidth > 991) {
+      // Create a GSAP animation for infinite rotation
+      gsap.to(svgHeader, {
+        rotation: 360, // Rotate by 360 degrees
+        duration: 10, // Duration of one full rotation (in seconds)
+        ease: 'none', // Linear rotation (constant speed)
+        repeat: -1, // Infinite repetition
+      });
+    } else {
+      console.log('trop petit');
+    }
+  }
 
+  // Run the function on initial load
+  runGsapAnimation();
+
+  // Attach the function to the window resize event
+  window.addEventListener('resize', runGsapAnimation);
+
+  /*
   // Initialize ScrollSmoother and return the instance
   function smoothScroll() {
     //eslint-disable-next-line
     let smoother = ScrollSmoother.create({
       wrapper: '.smooth-wrapper',
-      content: '.page-wrapper',
+      content: '.smooth-content',
       smooth: 1,
       effects: true,
     });
   }
   smoothScroll();
+*/
 
   const cursor = document.querySelector('.cursor');
   const hoverItem = document.querySelector('#hover-item');
@@ -77,35 +92,34 @@ window.Webflow.push(() => {
   });
 
   function updateCursor() {
-    // Check if the multi-form22_component modal is present and visible
-    const modal = document.querySelector('.multi-form22_component');
-    if (modal && modal.style.display !== 'none') {
-      return; // Exit the function if the modal is open and visible
-    }
+    // Check if the window width is greater than 991 pixels
+    if (window.innerWidth > 991) {
+      // Existing logic for larger screens
+      const hoverItemRect = hoverItem.getBoundingClientRect();
+      const dist = distanceToPoint(mouseX, mouseY, hoverItemRect);
+      const scale = calculateScale(dist, maxDistance, maxScale);
 
-    // Existing cursor update logic
-    const hoverItemRect = hoverItem.getBoundingClientRect();
-    const dist = distanceToPoint(mouseX, mouseY, hoverItemRect);
-    const scale = calculateScale(dist, maxDistance, maxScale);
+      const cursorX = mouseX + window.scrollX;
+      const cursorY = mouseY + window.scrollY;
 
-    // Calculate cursor position based on scroll position
-    const cursorX = mouseX + window.scrollX;
-    const cursorY = mouseY + window.scrollY;
+      if (scale > 1) {
+        document.body.style.cursor = 'none';
+      } else {
+        document.body.style.cursor = 'auto';
+      }
 
-    // Hide the default cursor when the custom cursor is active
-    if (scale > 1) {
-      document.body.style.cursor = 'none';
+      cursor.style.opacity = scale > 1 ? 1 : 0;
+      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) scale(${scale})`;
     } else {
+      // Reset custom cursor styles for smaller screens
       document.body.style.cursor = 'auto';
+      cursor.style.opacity = 0;
+      cursor.style.transform = 'none';
     }
 
-    cursor.style.opacity = scale > 1 ? 1 : 0;
-    cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) scale(${scale})`;
-
-    if (!isMouseMoving) {
-      return;
+    if (isMouseMoving) {
+      requestAnimationFrame(updateCursor);
     }
-    requestAnimationFrame(updateCursor);
   }
 
   function distanceToPoint(x, y, rect) {
@@ -127,5 +141,4 @@ window.Webflow.push(() => {
 
   // Attach event listener for closing the modal
   document.querySelector('.multi-form22_close-button').addEventListener('click', closeModal);
-  console.log('it merged');
 });

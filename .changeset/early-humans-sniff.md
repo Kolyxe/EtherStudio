@@ -2,4 +2,4 @@
 '@etherstudio/etherstudio': patch
 ---
 
-release animation
+removed scrollsmoother (gsap not updating)

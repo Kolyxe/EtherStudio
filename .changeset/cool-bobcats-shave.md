@@ -2,4 +2,4 @@
 '@etherstudio/etherstudio': patch
 ---
 
-release animation
+gsap dependecie
